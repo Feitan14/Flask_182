@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de Paciente</title>
+  <style> 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    body {
+        background-image: url("fon.avif");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <h1>Formulario de Paciente</h1>
+  <form>
+    <div class="form-group">
+      <label for="id_paciente">ID Paciente:</label>
+      <input type="text" id="id_paciente" name="id_paciente" required>
+    </div>
+
+    <div class="form-group">
+      <h2>Exploración</h2>
+      <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+      <label for="peso">Peso:</label>
+      <input type="number" id="peso" name="peso" required>
+
+      <label for="altura">Altura:</label>
+      <input type="number" id="altura" name="altura" required>
+
+      <label for="temperatura">Temperatura:</label>
+      <input type="number" id="temperatura" name="temperatura" required>
+
+      <label for="latidos">Latidos por Minuto:</label>
+      <input type="number" id="latidos" name="latidos" required>
+
+      <label for="oxigeno">Oxígeno:</label>
+      <input type="number" id="oxigeno" name="oxigeno" required>
+
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="edad" required>
+    </div>
+
+    <div class="form-group">
+      <h2>Diagnóstico</h2>
+      <label for="sintomas">Síntomas:</label>
+      <textarea id="sintomas" name="sintomas" required></textarea>
+
+      <label for="dx">DX (Diagnóstico):</label>
+      <textarea id="dx" name="dx" required></textarea>
+
+      <label for="tratamiento">Tratamiento:</label>
+      <textarea id="tratamiento" name="tratamiento" required></textarea>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="solicitud_estudios" name="solicitud_estudios">
+          Solicitud de Estudios
+        </label>
+      </div>
+    </div>
+    
+    <div class="center">
+      <a href="#" class="btn-download">Descargar Receta</a>
+    </div>
+  </form>
+</body>
+</html>
