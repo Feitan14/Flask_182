@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request
 
 #inicializacion del servidor Flask
 app= Flask(__name__)
@@ -12,11 +12,17 @@ app.config['MySQL_BD'] = "bdflask"
 #ruta index o ruta principal: (http://localhost:5000)
 @app.route('/')
 def index():
-    return "Hola mundo"
+    return render_template('index.html')
 
-@app.route('/guardar')
-def guardar():
-    return "se guardo el album en la BD"
+@app.route('/guardar', methods=['POST'])
+def guardar(): 
+    if request.method == 'POST':
+        titulo = request.form['txtTitulo']
+        artista = request.form['txtArtista']
+        anio = request.form['txtAnio']
+        print(titulo, artista, anio)
+    
+    return "La info del album llego a su ruta friend;)"
 
 @app.route('/eliminar')
 def eliminar():
