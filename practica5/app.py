@@ -63,9 +63,20 @@ def actualizar(id):
     flash('Album actualizado en BD :)')
     return redirect(url_for('index'))
 
-
-@app.route('/eliminar')
-def eliminar():
+#eliminar
+@app.route('/Eliminar/<id>', methods=['POST'])
+def eliminar(id):
+    if request.method == 'POST':
+        
+        Vtitulo = request.form['txtTitulo']
+        Vartista = request.form['txtArtista']
+        Vanio = request.form['txtAnio']
+        
+        curAct = mysql.connection.cursor()
+        curAct.execute('delete albums set titulo=%s, artista=%s, anio=%s where id=%s', (Vtitulo, Vartista, Vanio, id))
+        mysql.connection.commit()
+        
+    flash('Album Eliminado en BD :(')
     return "Se elimino"
 
 #Ejecucion
